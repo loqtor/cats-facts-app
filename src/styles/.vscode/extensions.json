@@ -1,0 +1,11 @@
+{
+  // List of extensions which should be recommended for users of this workspace.
+  "recommendations": [
+    "coenraads.bracket-pair-colorizer", // colourise bracket pairs
+    "mrmlnc.vscode-scss", // SCSS IntelliSense
+    "naumovs.color-highlight", // hightlight CSS colours in the editor
+    "streetsidesoftware.code-spell-checker", // spellcheck your code
+    "esbenp.prettier-vscode", // Prettier, code formatter
+    "wwm.better-align" // align your code sexily
+  ]
+}

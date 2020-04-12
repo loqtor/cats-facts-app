@@ -11,8 +11,10 @@ import { RootReducer } from "./store/reducers";
 import * as serviceWorker from './serviceWorker';
 
 import { Home } from '../src/pages/Home';
-import { Example } from '../src/pages/Example';
+import { Game } from '../src/pages/Game';
 import rootSaga from './store/sagas';
+
+import 'styles/src/app.scss';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -24,7 +26,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/example" component={Example} />
+        <Route path="/game" component={Game} />
       </Switch>
     </Router>
   </Provider>

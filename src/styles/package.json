@@ -1,0 +1,32 @@
+{
+  "name": "aintcss",
+  "version": "1.0.1",
+  "description": "Alphero Inverted Triangle CSS framework builds upon ideas and methodologies found in the following CSS frameworks: suitcss, inuitcss and itcss.",
+  "main": "src/app.scss",
+  "scripts": {
+    "build": "node-sass-chokidar --source-map true src/app.scss -o demo/css/ && postcss demo/css/*.css --use autoprefixer -d demo/css",
+    "watch": "chokidar 'src/**/*.*' --initial -c 'npm run build'",
+    "demo": "static-server demo/",
+    "audit": "stylelint src/* -f verbose"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:alphero/aintcss.git"
+  },
+  "author": "James Bosworth - Alphero Limited",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^9.4.10",
+    "chokidar-cli": "^1.2.2",
+    "node-sass-chokidar": "^1.3.4",
+    "postcss-cli": "^6.1.2",
+    "static-server": "^2.2.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.5.4"
+  }
+}

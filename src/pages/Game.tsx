@@ -21,13 +21,13 @@ interface DispatchProps {
  
 type Props = StateProps & DispatchProps & OwnProps;
 
-class ExampleComponent extends React.Component<Props, {}> {
+class GameComponent extends React.Component<Props, {}> {
   render() {
     const { clickCount, countClick } = this.props;
 
     return (
       <>
-        <h1>This is an example extra route.</h1>
+        <h1>This is a game extra route.</h1>
         <p>{clickCount} times clicked.</p>
         <button onClick={countClick}>Click to count!</button>
         <Link to="/">Back to home</Link>
@@ -50,5 +50,5 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>): DispatchProps {
   };
 }
   
-export const Example = connect<StateProps, any, Props, any>
-  (mapStateToProps, mapDispatchToProps)(ExampleComponent)
+export const Game = connect<StateProps, any, Props, any>
+  (mapStateToProps, mapDispatchToProps)(GameComponent)
