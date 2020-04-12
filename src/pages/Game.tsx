@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { useEffect } from 'react';
 import { getFacts } from 'store/selectors/facts';
 
 import { Link } from 'react-router-dom';
@@ -16,17 +16,9 @@ interface DispatchProps {
  
 type Props = StateProps & DispatchProps & OwnProps;
 
-export const Game = class Game extends React.Component<Props, {}> {
-  render() {
-    const { clickCount, countClick } = this.props;
-
-    return (
-      <>
-        <h1>This is a game extra route.</h1>
-        <p>{clickCount} times clicked.</p>
-        <button onClick={countClick}>Click to count!</button>
-        <Link to="/">Back to home</Link>
-      </>
-    )
-  }
-}
+export const Game = () => (
+  <>
+    <h1>This is a game extra route.</h1>
+    <Link to="/">Back to home</Link>
+  </>
+);
