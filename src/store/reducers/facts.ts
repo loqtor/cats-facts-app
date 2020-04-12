@@ -30,7 +30,7 @@ export const catFacts = (state = initialState, action: { payload: any, type: any
       return {
         ...state,
         isLoading: false,
-        facts: action.payload.facts,
+        facts: action.payload,
       };
     
     case FACTS_TYPES.GET_FACTS_FAIL:

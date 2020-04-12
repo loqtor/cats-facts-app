@@ -2,23 +2,22 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { getFacts } from 'store/selectors/facts';
 
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { FACTS_TYPES } from 'store/actions/facts';
 
 export interface OwnProps {}
 
-interface StateProps {
-  clickCount: number;
-}
-     
-interface DispatchProps {
-  countClick: () => void
-}
- 
-type Props = StateProps & DispatchProps & OwnProps;
+export const Game = (props: OwnProps) => {
+  const dispatch = useDispatch();
+  const facts = useSelector(getFacts);
 
-export const Game = () => (
-  <>
-    <h1>This is a game extra route.</h1>
-    <Link to="/">Back to home</Link>
-  </>
-);
+  useEffect(() => {
+    dispatch({ type: FACTS_TYPES.GET_FACTS });
+  }, [dispatch]);
+
+  return (
+    <ul>
+      {facts.map((fact) => <li>{fact.text}</li>)}
+    </ul>
+  );
+};
