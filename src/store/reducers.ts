@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import { ExampleState, example } from './reducers/example';
+import { FactsState, catFacts } from './reducers/facts';
 
 export const RootReducer = combineReducers({
-  example,
+  catFacts,
 });
 
 export type RootState = {
-  example: ExampleState
+  catFacts: FactsState,
 };

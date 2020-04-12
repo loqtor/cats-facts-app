@@ -1,13 +1,8 @@
 import * as React from 'react';
-import * as Redux from 'redux';
 
-import { connect } from 'react-redux';
-
-import { getClickCount } from 'store/selectors/example';
-import { countClick } from 'store/actions/example';
+import { getFacts } from 'store/selectors/facts';
 
 import { Link } from 'react-router-dom';
-import { RootState } from 'store/reducers';
 
 export interface OwnProps {}
 
@@ -21,7 +16,7 @@ interface DispatchProps {
  
 type Props = StateProps & DispatchProps & OwnProps;
 
-class GameComponent extends React.Component<Props, {}> {
+export const Game = class Game extends React.Component<Props, {}> {
   render() {
     const { clickCount, countClick } = this.props;
 
@@ -35,20 +30,3 @@ class GameComponent extends React.Component<Props, {}> {
     )
   }
 }
- 
-function mapStateToProps(state: RootState): StateProps {
-  return {
-    clickCount: getClickCount(state),
-  };
-}
- 
-function mapDispatchToProps(dispatch: Redux.Dispatch<any>): DispatchProps {
-  return {
-    countClick: () => {
-      return dispatch(countClick())
-    },
-  };
-}
-  
-export const Game = connect<StateProps, any, Props, any>
-  (mapStateToProps, mapDispatchToProps)(GameComponent)
