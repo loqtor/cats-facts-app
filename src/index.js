@@ -6,13 +6,13 @@ import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
 import { Provider } from 'react-redux'
-import { RootReducer } from "./store/reducers";
+import { RootReducer } from 'store/reducers';
 
 import * as serviceWorker from './serviceWorker';
 
-import { Home } from '../src/pages/Home';
-import { Game } from '../src/pages/Game';
-import rootSaga from './store/sagas';
+import { Home } from 'pages/Home';
+import { Game } from 'pages/Game';
+import rootSaga from 'store/sagas';
 
 import 'styles/src/app.scss';
 
